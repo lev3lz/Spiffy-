@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPiFFY! :D
-# Rapid Deploy Scapy Recon..soon with Payloads!
+# Rapid Deploy Scapy Recon...probably about to scrap this and restart in python *facepalm*
 # By: lev3lz
 
 read -p '''[*] TargetIP: ''' TARGETIP
