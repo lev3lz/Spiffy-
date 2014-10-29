@@ -1,22 +1,11 @@
 #!/bin/bash
 # SPiFFY! :D
-# Rapid Deploy Scapy Recon...probably about to scrap this and restart in python *facepalm*
+# Rapid Deploy Scapy Recon..soon with Payloads!
 # By: lev3lz
-
 read -p '''[*] TargetIP: ''' TARGETIP
 mkdir -p $TARGETIP
 cd $TARGETIP
-
-#TAPE's colors
-STD=$(echo -e "\e[0;0;0m") #Revert fonts to standard colour/format
-RED=$(echo -e "\e[1;31m") #Alter fonts to red bold
-REDN=$(echo -e "\e[0;31m") #Alter fonts to red normal
-GRN=$(echo -e "\e[1;32m") #Alter fonts to green bold
-GRNN=$(echo -e "\e[0;32m") #Alter fonts to green normal
-BLU=$(echo -e "\e[1;36m") #Alter fonts to blue bold
-BLUN=$(echo -e "\e[0;36m") #Alter fonts to blue normal		
-
-
+### One Shot Scapy Scans ###
 fone_(){
 	scapy > $scapy
 	ans.nssummary > $ans
@@ -46,11 +35,6 @@ fnine_(){
 	''
 }
 
-
-
-
-
-
 foneliners(){
 
 	clear
@@ -79,58 +63,49 @@ read -p '''
 [*] Press Enter To Return To Menu'''
 foneliners
 elif [ $MENU = 1 ]
-	fone_
-then
-	ftwo_
+	then
+		ftwo_
 elif [ $MENU = 2 ]
-then
-	fthree_
+	then
+		fthree_
 elif [ $MENU = 3 ]
-then
-	ffour_
+	then
+		ffour_
 elif [ $MENU = 4 ]
-then
-	ffive_
+	then
+		ffive_
 elif [ $MENU = 5 ]
-then
-	fsix_
+	then
+		fsix_
 elif [ $MENU = 6 ]
-then
-	fseven_
+	then
+		fseven_
 elif [ $MENU = 7 ]
-then
-	feight_
+	then
+		feight_
 elif [ $MENU = 8 ]
-then
-	fnine_
+	then
+		fnine_
 elif [ $MENU = 9 ]
-then
-	fdel
+	then
+		fdel
 else
 echo '[*] Invalid option'
 fi
 }
 
-#### PacketForge build your ownpayload style
 fpacketforge(){
 echo '[*] Packet Forge'
 
 }
-#### meant to configure source IP and MAC spoofing, possibily other packet dissection vars
 fconfiguration(){
 echo '[*] Configuration'
 
 }
-####Trying to keep this part of THS RECON as a feature
-
-############### TOP MENU ##################
-
-
 fask(){
 clear
 echo '''
-
-ITS SPIFFY
+Itll be SPIFFY...one day ...one day...
                                                   
 '''
 echo ''
@@ -154,24 +129,22 @@ read -p '''
 
 fask
 elif [ $MENU = 1 ]
-then
-	foneliners
+	then
+		foneliners
 elif [ $MENU = 2 ]
-then
-	fpacketforge
+	then
+		fpacketforge
 elif [ $MENU = 3 ]
-then
-	fconfiguration
+	then
+		fconfiguration
 elif [ $MENU = 4 ]
-then
-	fsearchsploit
+	then
+		fsearchsploit
 
-	fi
+fi
 }
-	while [ true ]
-	do
+while [ true ]
+do
 	clear
 	fask
-	done
-
-
+done
