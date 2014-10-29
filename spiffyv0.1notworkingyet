@@ -1,59 +1,157 @@
 #!/bin/bash
-# 
-# thsrecon version 1 (2014)
-# By: R4v3N
-# http://www.top-hat-sec.com###scappyscripteditsbylev3lz
+# SPiFFY! :D
+# Rapid Deploy Scapy Recon..soon with Payloads!
+# By: lev3lz
 
 read -p '''[*] TargetIP: ''' TARGETIP
 mkdir -p $TARGETIP
 cd $TARGETIP
 
-curl -s http://ipecho.net/plain > extipaddr
-
 #TAPE's colors
-STD=$(echo -e "\e[0;0;0m")  #Revert fonts to standard colour/format
-RED=$(echo -e "\e[1;31m")  #Alter fonts to red bold
-REDN=$(echo -e "\e[0;31m")  #Alter fonts to red normal
-GRN=$(echo -e "\e[1;32m")  #Alter fonts to green bold
-GRNN=$(echo -e "\e[0;32m")  #Alter fonts to green normal
-BLU=$(echo -e "\e[1;36m")  #Alter fonts to blue bold
-BLUN=$(echo -e "\e[0;36m")  #Alter fonts to blue normal
-
-fask()
-{
-clear
-echo '''
-##########################
-###########
-#####
-#        Butchered THS-RECON into Spiffy Prototype.
-#    
-####
-################
-'''
-
-echo ''
-echo ''
-read -p '''
-[*] 0 - Set TargetIP            
-[*] 1 - One Liners               [scans,arp]           
-[*] 2 - Packet Forge             [attack vectors]
-[*] 3 - Configuration            [SpoofIP/MAC]
-[*] 4 - ExploitDatabaseReport    [Bounce NFO to CSV]
-[*] r - Show Session Data
+STD=$(echo -e "\e[0;0;0m") #Revert fonts to standard colour/format
+RED=$(echo -e "\e[1;31m") #Alter fonts to red bold
+REDN=$(echo -e "\e[0;31m") #Alter fonts to red normal
+GRN=$(echo -e "\e[1;32m") #Alter fonts to green bold
+GRNN=$(echo -e "\e[0;32m") #Alter fonts to green normal
+BLU=$(echo -e "\e[1;36m") #Alter fonts to blue bold
+BLUN=$(echo -e "\e[0;36m") #Alter fonts to blue normal		
 
 
+fone_(){
+	scapy > $scapy
+	ans.nssummary > $ans
+}
+ftwo_(){
+	''
+}
+fthree_(){
+	''
+}
+ffour_(){
+	''
+}
+ffive_(){
+	''
+}
+fsix_(){
+	''
+}
+fseven_(){
+	''
+}
+feight_(){
+	''
+}
+fnine_(){
+	''
+}
+
+
+
+
+
+
+foneliners(){
+
+	clear
+	echo '''
+			Typical Scapy Scans
+		'''
+	echo ''
+	echo ''
+			read -p '''
+[*] 1 - ARP SCAN Local Subnet
+[*] 2 - Set
+[*] 3 - Set 
+[*] 4 - Set 
+[*] 5 - Set 
+[*] 6 - Set
+[*] 7 - Set
+[*] 8 - Set
+[*] 9 - Set
 [>] Enter Menu Selection: ''' MENU
 if [ $MENU = 0 ]
 then
-	read -p TARGETIP
-		echo "Set TargetIP to:"
-
-
-
-ifconfig | grep -B 1 Bcast | awk '{print $1, $2}' | tr -d '-' | cut -d : -f 2 | cut -d ' ' -f 1
+read -p '''[*] TargetIP: ''' TARGETIP
+mkdir -p $TARGETIP
+cd $TARGETIP
 read -p '''
 [*] Press Enter To Return To Menu'''
+foneliners
+elif [ $MENU = 1 ]
+	fone_
+then
+	ftwo_
+elif [ $MENU = 2 ]
+then
+	fthree_
+elif [ $MENU = 3 ]
+then
+	ffour_
+elif [ $MENU = 4 ]
+then
+	ffive_
+elif [ $MENU = 5 ]
+then
+	fsix_
+elif [ $MENU = 6 ]
+then
+	fseven_
+elif [ $MENU = 7 ]
+then
+	feight_
+elif [ $MENU = 8 ]
+then
+	fnine_
+elif [ $MENU = 9 ]
+then
+	fdel
+else
+echo '[*] Invalid option'
+fi
+}
+
+#### PacketForge build your ownpayload style
+fpacketforge(){
+echo '[*] Packet Forge'
+
+}
+#### meant to configure source IP and MAC spoofing, possibily other packet dissection vars
+fconfiguration(){
+echo '[*] Configuration'
+
+}
+####Trying to keep this part of THS RECON as a feature
+
+############### TOP MENU ##################
+
+
+fask(){
+clear
+echo '''
+
+ITS SPIFFY
+                                                  
+'''
+echo ''
+echo ''
+read -p '''
+[*] 0 - Set TargetIP
+[*] 1 - One Liners [scans,arp]
+[*] 2 - Packet Forge [attack vectors]
+[*] 3 - Configuration [SpoofIP/MAC]
+[*] 4 - ExploitDatabase Analysis
+[*] r - Show Session Data
+[>] Enter Menu Selection: ''' MENU
+
+if [ $MENU = 0 ]
+then
+read -p '''[*] TargetIP: ''' TARGETIP
+mkdir -p $TARGETIP
+cd $TARGETIP
+read -p '''
+[*] Press Enter To Return To Menu'''
+
 fask
 elif [ $MENU = 1 ]
 then
@@ -64,99 +162,16 @@ then
 elif [ $MENU = 3 ]
 then
 	fconfiguration
-
 elif [ $MENU = 4 ]
 then
 	fsearchsploit
-elif [ $MENU = 'r' ]
-then
-	fdel
-else
-	echo '[*] Invalid option'
-fi
-}
 
-while [ true ]
-do
+	fi
+}
+	while [ true ]
+	do
 	clear
 	fask
-done
-
-##### selection to lead to typical scapy scans
-foneliners()
-{
-clear
-fonelinerssub1
-}
+	done
 
 
-#### Trying to make it so that foneliners opens another menu... maybe even another after that...
-fonelinerssub1()
-{
-elif [ $SUBMENU = 1]
-then
-elif [ $SUBMENU = 2]
-then
-elif [ $SUBMENU = 3]
-then
-elif [ $SUBMENU = 4]
-then
-elif [ $SUBMENU = 5]
-then
-elif [ $SUBMENU = 6]
-then
-elif [ $SUBMENU = 7]
-then
-elif [ $SUBMENU = 8]
-then
-elif [ $SUBMENU = 9]
-then
-elif [ $SUBMENU = 0]
-then
-	fdel
-else
-	echo 'Invalid Input'
-done
-}
-
-#### PacketForge build your ownpayload style
-fpacketforge()
-{}
-
-#### meant to configure source IP and MAC spoofing, possibily other packet dissection vars
-fconfiguration()
-{}
-
-
-####Trying to keep this part of THS RECON as a feature
-fsearchsploit(){
-read -p '''
-[*] 1 - Search Exploit By Keyword:
-[*] 2 - Search By Saved Results:
->''' mensploit
-if [ $mensploit = 1 ]
-then
-	read -p '''
-[>] Enter Keyword: ''' skeyword
-	echo ""
-echo " [ $skeyword ] selected"
-sleep 1
-	cd /opt/exploit-database/
-	echo ""
-	./searchsploit $skeyword > $skeyword.searchsploit
-	cat $skeyword.searchsploit
-	read -p '''
-[*] Press Enter To Return To Menu '''
-else
-		services=$(cat $pscanip.servicescan.nmap | grep "open " | sed /port/d | awk '{print $4, $5, $6, $7, $8}' | cut -d ' ' -f 2 | sort -u)
-		for service in $services
-		do
-			cd /opt/exploit-database/
-			./searchsploit $services >> /root/tools/thsosrtl/thsrecon/$SESSNAME/$pscanip.searchsploit
-			#cd /root/tools/thsosrtl/thsrecon/$SESSNAME/
-			#cat /root/tools/thsosrtl/thsrecon/$SESSNAME/$pscanip.searchsploit
-		done
-		read -p '''[*] Press Enter To Return To Menu: '''
-	fi
-fi
-}
